@@ -7,6 +7,9 @@ CFLAGS = -Wall -Iinclude
 # Source files
 SOURCES = src/bit_util.c src/bit_util_test.c
 
+# Debug flags (add -g for debugging)
+DEBUG_FLAGS = -g
+
 # Object files
 OBJECTS = $(SOURCES:.c=.o)
 
@@ -22,7 +25,7 @@ all: $(TARGET)
 
 # Link object files
 $(TARGET): $(OBJECTS)
-	$(CC) $(CFLAGS) $(OBJECTS) -o $@
+	$(CC) $(CFLAGS) $(DEBUG_FLAGS) $(OBJECTS) -o $@
 
 # Clean
 clean:
